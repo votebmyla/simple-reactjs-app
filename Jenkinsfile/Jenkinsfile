@@ -1,9 +1,13 @@
 pipeline {
   agent any
+  environment {
+    DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+  }
   stages {
-    stage("build stage"){
+    stage('clone project'){
       steps{
-        echo 'building the application ...'
+        echo 'cloning project ...'
+        git 'https://github.com/votebmyla/simple-reactjs-app.git'
       }
       
     }
