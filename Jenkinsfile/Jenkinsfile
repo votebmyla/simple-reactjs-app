@@ -9,11 +9,17 @@ pipeline {
         sh 'ls -l'
       }
     }
-    stage('build'){
+    stage('build nodejs app'){
       steps{
         sh 'npm install'
         sh 'npm run build'
         sh 'ls -l'
+      }
+    }
+    stage('build docker image'){
+      steps{
+        sh 'docker build -t votebmyla/reactjs-app:latest .'
+        sh 'docker ps'
       }
     }
   }
