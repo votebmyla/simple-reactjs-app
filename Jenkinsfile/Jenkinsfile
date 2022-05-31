@@ -9,5 +9,10 @@ pipeline {
         sh 'ls -l'
       }
     }
+    stage('build docker image'){
+      steps{
+        echo 'docker build...'
+      }
+    }
   }
 }
