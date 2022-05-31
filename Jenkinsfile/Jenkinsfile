@@ -7,8 +7,8 @@ pipeline {
     stage('clone project'){
       steps{
         echo 'cloning project ...'
-        git 'https://github.com/votebmyla/simple-reactjs-app.git'
-      }
+        git branch: 'staging', credentialsId: 'github', poll: false, url: 'https://github.com/votebmyla/simple-reactjs-app.git'
+        }
       
     }
     stage("test stage"){
