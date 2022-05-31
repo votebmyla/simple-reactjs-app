@@ -11,7 +11,8 @@ pipeline {
     }
     stage('build docker image'){
       steps{
-        echo 'docker build...'
+        sh 'docker build -t votebmyla/reactjs-app:latest'
+        sh 'docker images'
       }
     }
   }
