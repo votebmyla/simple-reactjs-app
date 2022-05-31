@@ -4,21 +4,9 @@ pipeline {
     DOCKERHUB_CREDENTIALS=credentials('dockerhub')
   }
   stages {
-    stage('listing directory before clone'){
+    stage('listing directory'){
       steps{
         sh 'ls -l'
-      }
-    }
-    stage('clone project'){
-      steps{
-        echo 'cloning project ...'
-        git branch: 'staging', credentialsId: 'github', poll: false, url: 'https://github.com/votebmyla/simple-reactjs-app.git'
-      }
-    }
-    stage("listing directory after cloning"){
-      steps{
-        echo 'testing the application...'
-        sh "ls -la"
       }
     }
   }
