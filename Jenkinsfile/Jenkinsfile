@@ -19,7 +19,7 @@ pipeline {
     stage('build docker image'){
       steps{
         sh 'docker build -t votebmyla/reactjs-app:latest .'
-        sh 'docker ps'
+        sh 'docker images'
       }
     }
   }
